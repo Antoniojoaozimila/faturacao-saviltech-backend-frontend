@@ -1,0 +1,93 @@
+.pagina-facturacao .facturacao-cliente-existente {
+  margin-bottom: 1.25rem;
+}
+
+.pagina-facturacao .facturacao-cliente-existente label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #334155;
+  margin-bottom: 0.5rem;
+}
+
+.facturacao-dropdown-wrap {
+  position: relative;
+}
+
+.facturacao-input-cliente {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  border: 2px solid rgba(148, 163, 184, 0.4);
+  border-radius: 12px;
+  font-size: 0.95rem;
+  background: #fff;
+  transition: border-color 0.2s ease;
+}
+
+.facturacao-input-cliente:focus {
+  outline: none;
+  border-color: #1a365d;
+}
+
+.facturacao-lista-clientes {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin: 0.25rem 0 0;
+  padding: 0.35rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.15);
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  list-style: none;
+  z-index: 10;
+  max-height: 280px;
+  overflow-y: auto;
+}
+
+.facturacao-item-cliente {
+  width: 100%;
+  padding: 0.6rem 0.85rem;
+  text-align: left;
+  border: none;
+  background: transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: #1e293b;
+  transition: background 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.facturacao-item-cliente:hover {
+  background: rgba(26, 54, 93, 0.08);
+}
+
+.facturacao-item-email {
+  font-size: 0.78rem;
+  color: #64748b;
+}
+
+.pagina-facturacao .campo-observacoes {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.pagina-facturacao .campo-observacoes textarea {
+  width: 100%;
+  padding: 0.65rem 0.85rem;
+  border: 2px solid rgba(148, 163, 184, 0.4);
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  resize: vertical;
+  min-height: 4rem;
+}
+
+.pagina-facturacao .campo-observacoes textarea:focus {
+  outline: none;
+  border-color: #1a365d;
+}

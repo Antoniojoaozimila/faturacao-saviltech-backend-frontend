@@ -1,0 +1,18 @@
+.layout-dashboard {
+  min-height: 100vh;
+  padding-top: 64px;
+  padding-bottom: 120px;
+}
+
+.main-dashboard {
+  margin-left: 240px;
+  height: calc(100vh - 64px - 120px);
+  padding: 1.5rem 2rem 2.5rem;
+  transition: margin-left 0.3s ease;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.main-dashboard.sidebar-colapsado {
+  margin-left: 72px;
+}

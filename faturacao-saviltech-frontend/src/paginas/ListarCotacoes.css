@@ -1,0 +1,281 @@
+.pagina-listar-cotacoes {
+  animation: listarFade 0.4s ease-out;
+}
+
+@keyframes listarFade {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.listar-header {
+  margin-bottom: 1.5rem;
+}
+
+.listar-header h1 {
+  font-size: 1.25rem;
+  color: #0f172a;
+  margin-bottom: 0.25rem;
+}
+
+.listar-header p {
+  font-size: 0.9rem;
+  color: #64748b;
+}
+
+.listar-header-btn {
+  display: inline-block;
+  padding: 1rem 1.5rem;
+  background: linear-gradient(135deg, rgba(26, 54, 93, 0.08) 0%, rgba(43, 108, 176, 0.06) 100%);
+  border: 2px solid rgba(26, 54, 93, 0.2);
+  border-radius: 14px;
+  cursor: default;
+  transition: background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.listar-header-btn:hover {
+  background: linear-gradient(135deg, rgba(26, 54, 93, 0.12) 0%, rgba(43, 108, 176, 0.08) 100%);
+  border-color: rgba(26, 54, 93, 0.35);
+  box-shadow: 0 4px 16px rgba(26, 54, 93, 0.12);
+}
+
+.listar-filtros {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.listar-pesquisa-wrap {
+  flex: 1;
+  min-width: 200px;
+  position: relative;
+}
+
+.listar-lupa {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1rem;
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.listar-input-pesquisa {
+  width: 100%;
+  padding: 0.6rem 1rem 0.6rem 2.5rem;
+  border: 2px solid rgba(148, 163, 184, 0.4);
+  border-radius: 12px;
+  font-size: 0.9rem;
+  background: #fff;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.listar-input-pesquisa:focus {
+  outline: none;
+  border-color: #1a365d;
+  box-shadow: 0 0 0 3px rgba(26, 54, 93, 0.12);
+}
+
+.listar-filtro-tipo,
+.listar-filtro-por-pagina {
+  padding: 0.6rem 1rem;
+  border: 2px solid rgba(148, 163, 184, 0.4);
+  border-radius: 12px;
+  font-size: 0.9rem;
+  background: #fff;
+  color: #1e293b;
+  cursor: pointer;
+}
+
+.listar-tabela-wrap {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(15, 23, 42, 0.08);
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  overflow: hidden;
+}
+
+.listar-vazio {
+  padding: 3rem 2rem;
+  text-align: center;
+  color: #64748b;
+}
+
+.listar-vazio p {
+  margin-bottom: 1rem;
+}
+
+.listar-btn-criar {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  background: linear-gradient(135deg, #1a365d 0%, #2b6cb0 100%);
+  color: #e2e8f0;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.listar-btn-criar:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(26, 54, 93, 0.35);
+}
+
+.listar-tabela {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+}
+
+.listar-tabela thead {
+  background: linear-gradient(135deg, #1a365d 0%, #2b6cb0 100%);
+  color: #e2e8f0;
+}
+
+.listar-tabela th {
+  padding: 0.85rem 1rem;
+  text-align: left;
+  font-weight: 600;
+}
+
+.listar-tabela td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+  color: #334155;
+}
+
+.listar-tabela tbody tr.listar-tr-hover {
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+}
+
+.listar-tabela tbody tr.listar-tr-hover:hover {
+  background: linear-gradient(90deg, rgba(26, 54, 93, 0.08) 0%, rgba(43, 108, 176, 0.06) 100%);
+  box-shadow: inset 0 0 0 1px rgba(26, 54, 93, 0.12);
+}
+
+.listar-id code {
+  font-size: 0.8rem;
+  background: rgba(15, 23, 42, 0.06);
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  color: #1a365d;
+}
+
+.listar-valor {
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.listar-link-editar {
+  color: #1a365d;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.3rem 0.6rem;
+  border-radius: 8px;
+  transition: background 0.2s ease, color 0.2s ease;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font: inherit;
+}
+
+.listar-link-editar:hover {
+  background: rgba(26, 54, 93, 0.1);
+  color: #2b6cb0;
+}
+
+.listar-paginacao {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  flex-wrap: wrap;
+  border-top: 1px solid rgba(148, 163, 184, 0.2);
+  background: rgba(248, 250, 252, 0.8);
+}
+
+.listar-pag-btn {
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid rgba(26, 54, 93, 0.3);
+  border-radius: 10px;
+  background: #fff;
+  color: #1a365d;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.listar-pag-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #1a365d 0%, #2b6cb0 100%);
+  color: #e2e8f0;
+  border-color: transparent;
+  transform: scale(1.05);
+}
+
+.listar-pag-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.listar-pag-numeros {
+  display: flex;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.listar-pag-num {
+  min-width: 36px;
+  height: 36px;
+  padding: 0 0.5rem;
+  border: 2px solid rgba(148, 163, 184, 0.4);
+  border-radius: 10px;
+  background: #fff;
+  color: #334155;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.listar-pag-num:hover {
+  border-color: #1a365d;
+  color: #1a365d;
+  background: rgba(26, 54, 93, 0.06);
+  transform: translateY(-2px);
+}
+
+.listar-pag-num.ativo {
+  background: linear-gradient(135deg, #1a365d 0%, #2b6cb0 100%);
+  color: #e2e8f0;
+  border-color: transparent;
+  box-shadow: 0 4px 12px rgba(26, 54, 93, 0.35);
+  animation: listarPagAtivo 0.3s ease-out;
+}
+
+@keyframes listarPagAtivo {
+  0% { transform: scale(0.95); }
+  50% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+
+.listar-pag-info {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-left: 0.5rem;
+}

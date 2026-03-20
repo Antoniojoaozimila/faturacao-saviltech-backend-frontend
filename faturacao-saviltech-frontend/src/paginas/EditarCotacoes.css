@@ -1,0 +1,350 @@
+.pagina-editar-cotacoes {
+  animation: editarFade 0.4s ease-out;
+}
+
+@keyframes editarFade {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.editar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.editar-header h1 {
+  font-size: 1.25rem;
+  color: #0f172a;
+  margin-bottom: 0.25rem;
+}
+
+.editar-id {
+  font-size: 0.9rem;
+  color: #64748b;
+}
+
+.editar-id code {
+  background: rgba(15, 23, 42, 0.06);
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  color: #1a365d;
+}
+
+.editar-link-listar {
+  color: #1a365d;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.5rem 0.9rem;
+  border-radius: 10px;
+  border: 1px solid rgba(26, 54, 93, 0.3);
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.editar-link-listar:hover {
+  background: rgba(26, 54, 93, 0.08);
+  color: #2b6cb0;
+}
+
+.editar-bloco {
+  background: #fff;
+  border-radius: 14px;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.06);
+  border: 1px solid rgba(148, 163, 184, 0.25);
+}
+
+.editar-bloco h2 {
+  font-size: 1rem;
+  color: #1a365d;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid rgba(26, 54, 93, 0.15);
+}
+
+.editar-dl {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 0.4rem 1.5rem;
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.editar-dl dt {
+  color: #64748b;
+  font-weight: 600;
+}
+
+.editar-dl dd {
+  margin: 0;
+  color: #0f172a;
+}
+
+.editar-acoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.editar-btn {
+  padding: 0.6rem 1.2rem;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: inline-block;
+}
+
+.editar-btn:hover {
+  transform: translateY(-1px);
+}
+
+.editar-btn-pdf {
+  background: linear-gradient(135deg, #1a365d 0%, #2b6cb0 100%);
+  color: #e2e8f0;
+}
+
+.editar-btn-email {
+  background: linear-gradient(135deg, #f97316 0%, #fb923c 100%);
+  color: #0b1120;
+}
+
+.editar-btn-whatsapp {
+  background: linear-gradient(135deg, #16a34a 0%, #22c55e 100%);
+  color: #052e16;
+}
+
+.editar-btn-form {
+  background: transparent;
+  color: #1a365d;
+  border: 2px solid #1a365d;
+}
+
+.editar-btn-form:hover {
+  background: rgba(26, 54, 93, 0.08);
+}
+
+.editar-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Lista / pesquisa Editar Cotações */
+.pagina-editar-lista {
+  max-width: 100%;
+}
+
+.editar-lista-header {
+  margin-bottom: 1.5rem;
+}
+
+.editar-lista-header h1 {
+  font-size: 1.35rem;
+  color: #0f172a;
+  margin-bottom: 0.35rem;
+}
+
+.editar-lista-header p {
+  font-size: 0.9rem;
+  color: #64748b;
+}
+
+.editar-lista-header-btn {
+  display: inline-block;
+  padding: 1rem 1.5rem;
+  background: linear-gradient(135deg, rgba(26, 54, 93, 0.08) 0%, rgba(43, 108, 176, 0.06) 100%);
+  border: 2px solid rgba(26, 54, 93, 0.2);
+  border-radius: 14px;
+  cursor: default;
+  transition: background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.editar-lista-header-btn:hover {
+  background: linear-gradient(135deg, rgba(26, 54, 93, 0.12) 0%, rgba(43, 108, 176, 0.08) 100%);
+  border-color: rgba(26, 54, 93, 0.35);
+  box-shadow: 0 4px 16px rgba(26, 54, 93, 0.12);
+}
+
+.editar-lista-pesquisa {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.editar-pesquisa-wrap {
+  flex: 1;
+  min-width: 220px;
+  position: relative;
+}
+
+.editar-lupa {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.05rem;
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.editar-input-pesquisa {
+  width: 100%;
+  padding: 0.7rem 1rem 0.7rem 2.75rem;
+  border: 2px solid rgba(148, 163, 184, 0.4);
+  border-radius: 12px;
+  font-size: 0.95rem;
+  background: #fff;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.editar-input-pesquisa:focus {
+  outline: none;
+  border-color: #1a365d;
+  box-shadow: 0 0 0 3px rgba(26, 54, 93, 0.15);
+}
+
+.editar-filtro-tipo {
+  padding: 0.65rem 1rem;
+  border: 2px solid rgba(148, 163, 184, 0.4);
+  border-radius: 12px;
+  font-size: 0.9rem;
+  background: #fff;
+  color: #1e293b;
+  cursor: pointer;
+}
+
+.editar-lista-resultados {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(15, 23, 42, 0.08);
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.editar-lista-vazio {
+  padding: 2.5rem;
+  text-align: center;
+  color: #64748b;
+}
+
+.editar-btn-criar {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background: linear-gradient(135deg, #1a365d 0%, #2b6cb0 100%);
+  color: #e2e8f0;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: 600;
+  transition: transform 0.2s ease;
+}
+
+.editar-btn-criar:hover {
+  transform: translateY(-1px);
+}
+
+.editar-lista-cards {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  min-width: min-content;
+}
+
+.editar-lista-cards li {
+  border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+.editar-lista-cards li:last-child {
+  border-bottom: none;
+}
+
+.editar-card {
+  width: 100%;
+  min-width: 720px;
+  display: grid;
+  grid-template-columns: 140px 1.4fr 1.4fr 120px 140px 80px;
+  gap: 1rem;
+  align-items: center;
+  padding: 0.85rem 1.25rem;
+  text-align: left;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 0.88rem;
+  color: #334155;
+  transition: background 0.2s ease, transform 0.2s ease;
+  white-space: nowrap;
+}
+
+.editar-card > * {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.editar-card:hover {
+  background: rgba(26, 54, 93, 0.06);
+}
+
+.editar-card-id code {
+  font-size: 0.8rem;
+  background: rgba(15, 23, 42, 0.08);
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  color: #1a365d;
+}
+
+.editar-card-cliente {
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.editar-card-servico {
+  color: #475569;
+}
+
+.editar-card-valor {
+  font-weight: 600;
+  color: #1a365d;
+}
+
+.editar-card-data {
+  font-size: 0.82rem;
+  color: #64748b;
+}
+
+.editar-card-acao {
+  font-weight: 600;
+  color: #2b6cb0;
+}
+
+.editar-lista-footer {
+  margin-top: 1rem;
+}
+
+.editar-lista-footer .editar-link-listar {
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .editar-card {
+    min-width: 600px;
+    grid-template-columns: 110px 1.2fr 1.2fr 100px 110px 70px;
+  }
+}

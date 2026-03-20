@@ -1,0 +1,112 @@
+.footer-dashboard {
+  position: fixed;
+  bottom: 0;
+  left: 240px;
+  right: 0;
+  background: linear-gradient(0deg, rgba(26, 54, 93, 0.06) 0%, #ffffff 30%, #f8fafc 100%);
+  box-shadow: 0 -2px 16px rgba(26, 54, 93, 0.06);
+  padding: 1rem 2rem;
+  z-index: 100;
+  border-top: 2px solid rgba(26, 54, 93, 0.15);
+}
+
+.layout-dashboard.sidebar-colapsado .footer-dashboard {
+  left: 72px;
+}
+
+.footer-conteudo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.footer-copyright {
+  font-size: 0.8rem;
+  color: #64748b;
+}
+
+.footer-redes {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.footer-icone {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(26, 54, 93, 0.08);
+  border-radius: 10px;
+  color: var(--cor-primaria);
+  transition: all 0.25s ease;
+}
+
+.footer-icone svg {
+  width: 18px;
+  height: 18px;
+}
+
+.footer-icone:hover {
+  background: var(--cor-primaria);
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(26, 54, 93, 0.3);
+}
+
+.footer-newsletter {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.footer-newsletter-input {
+  padding: 0.5rem 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  min-width: 200px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.footer-newsletter-input:focus {
+  border-color: var(--cor-primaria);
+}
+
+.footer-newsletter-btn {
+  padding: 0.5rem 1rem;
+  background: var(--cor-primaria);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.footer-newsletter-btn:hover {
+  background: var(--cor-secundaria);
+  transform: scale(1.02);
+}
+
+.footer-divider {
+  margin: 1rem 0 0.75rem;
+  border: none;
+  border-top: 1px solid rgba(26, 54, 93, 0.12);
+}
+
+.footer-savil {
+  display: block;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #64748b;
+  text-decoration: none;
+  transition: color 0.2s, transform 0.2s;
+}
+
+.footer-savil:hover {
+  color: var(--cor-primaria);
+  transform: scale(1.02);
+}

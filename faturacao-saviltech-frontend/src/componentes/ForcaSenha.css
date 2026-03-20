@@ -1,0 +1,78 @@
+.forca-senha {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 0.35rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  transition: opacity 0.3s ease, transform 0.2s ease;
+  animation: forcaSenhaIn 0.35s ease-out;
+}
+
+@keyframes forcaSenhaIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.forca-senha-barras {
+  display: flex;
+  gap: 4px;
+}
+
+.forca-senha-bar {
+  width: 24px;
+  height: 4px;
+  border-radius: 2px;
+  background: #e2e8f0;
+  transition: background 0.4s ease, transform 0.3s ease;
+}
+
+.forca-senha--fraca .forca-senha-bar:nth-child(1) {
+  background: #dc2626;
+  transform: scaleY(1.2);
+  box-shadow: 0 0 8px rgba(220, 38, 38, 0.4);
+}
+
+.forca-senha--fraca .forca-senha-bar:nth-child(2),
+.forca-senha--fraca .forca-senha-bar:nth-child(3) {
+  background: #e2e8f0;
+}
+
+.forca-senha--razoavel .forca-senha-bar:nth-child(1),
+.forca-senha--razoavel .forca-senha-bar:nth-child(2) {
+  background: #d97706;
+  transform: scaleY(1.2);
+  box-shadow: 0 0 8px rgba(217, 119, 6, 0.35);
+}
+
+.forca-senha--razoavel .forca-senha-bar:nth-child(3) {
+  background: #e2e8f0;
+}
+
+.forca-senha--forte .forca-senha-bar {
+  background: #16a34a;
+  transform: scaleY(1.2);
+  box-shadow: 0 0 8px rgba(22, 163, 74, 0.35);
+}
+
+.forca-senha-label {
+  transition: color 0.3s ease;
+}
+
+.forca-senha--fraca .forca-senha-label {
+  color: #dc2626;
+}
+
+.forca-senha--razoavel .forca-senha-label {
+  color: #d97706;
+}
+
+.forca-senha--forte .forca-senha-label {
+  color: #16a34a;
+}

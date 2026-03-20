@@ -1,0 +1,19 @@
+.pagina-mensagens h1 { color: var(--cor-primaria); margin-bottom: 0.5rem; }
+.pagina-mensagens > p { color: #64748b; margin-bottom: 1.5rem; }
+.lista-mensagens { display: flex; flex-direction: column; gap: 1rem; }
+.msg-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.25rem; }
+.msg-cabecalho { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 1rem; margin-bottom: 0.5rem; }
+.msg-cabecalho strong { margin-right: 0.25rem; }
+.msg-data { font-size: 0.85rem; color: #64748b; }
+.msg-assunto { font-size: 0.9rem; color: #475569; margin-bottom: 0.5rem !important; }
+.msg-texto { color: #475569; margin: 0 0 1rem; white-space: pre-wrap; }
+.msg-card p { color: #475569; margin: 0 0 1rem; }
+.msg-carregando, .msg-erro, .msg-vazio { padding: 0.75rem; margin-bottom: 1rem; border-radius: 8px; }
+.msg-carregando { background: #f1f5f9; color: #475569; }
+.msg-erro { background: #fef2f2; color: #b91c1c; }
+.msg-vazio { background: #f8fafc; color: #64748b; }
+.msg-card.msg-lida { border-left: 3px solid #94a3b8; }
+.msg-responder textarea { width: 100%; padding: 0.75rem; border-radius: 8px; border: 1px solid #e2e8f0; margin-bottom: 0.5rem; }
+.msg-responder button { margin-right: 0.5rem; padding: 0.5rem 1rem; border-radius: 8px; cursor: pointer; }
+.btn-responder { padding: 0.5rem 1rem; background: var(--cor-primaria); color: #fff; border: none; border-radius: 8px; cursor: pointer; }
+.msg-resposta { margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #e2e8f0; font-size: 0.9rem; color: #64748b; }
