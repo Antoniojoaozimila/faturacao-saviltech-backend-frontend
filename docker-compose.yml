@@ -9,12 +9,28 @@ services:
     environment:
       # Valores por defeito se faltar ficheiro .env na raiz (evita MySQL com senha vazia)
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-root123}
-      # Nome real da base — obrigatório no .env da raiz (sem valor por defeito)
+      # Nome real da base — obrigatório no .env na raiz (sem valor por defeito)
       MYSQL_DATABASE: ${MYSQL_DATABASE:?Defina MYSQL_DATABASE no .env na raiz com o nome correto da base.}
     volumes:
       - mysql-data:/var/lib/mysql
     ports:
       - "3306:3306"
+    # Evita o backend ligar antes do MySQL aceitar conexões (corrige ECONNREFUSED)
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "mysqladmin",
+          "ping",
+          "-h",
+          "127.0.0.1",
+          "-uroot",
+          "-p${MYSQL_ROOT_PASSWORD:-root123}",
+        ]
+      interval: 5s
+      timeout: 5s
+      retries: 12
+      start_period: 60s
 
   # Backend Node.js
   backend:
@@ -32,7 +48,8 @@ services:
     ports:
       - "3000:3000"
     depends_on:
-      - mysql
+      mysql:
+        condition: service_healthy
 
   # Frontend React
   frontend:
