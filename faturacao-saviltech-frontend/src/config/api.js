@@ -1,12 +1,19 @@
 /**
- * URL base do backend (Sistema de Cotação API).
- * Em desenvolvimento: http://localhost:4000
- * Define VITE_API_URL no .env para alterar.
+ * URL base do backend.
+ * - Vazio (recomendado em produção com Docker): pedidos vão para /api no MESMO host
+ *   (Nginx no contentor frontend faz proxy para o backend).
+ * - Defina VITE_API_URL se a API estiver noutro domínio/porta (ex.: dev local).
  */
-export const API_BASE =
-  typeof import.meta !== 'undefined' && import.meta.env?.VITE_API_URL
-    ? import.meta.env.VITE_API_URL
-    : 'http://147.93.89.17:3000'
+function resolveApiBase() {
+  const raw =
+    typeof import.meta !== 'undefined' ? import.meta.env?.VITE_API_URL : undefined
+  if (raw != null && String(raw).trim() !== '') {
+    return String(raw).replace(/\/$/, '')
+  }
+  return ''
+}
+
+export const API_BASE = resolveApiBase()
 
 const STORAGE_TOKEN = 'sistema_cotacao_token'
 

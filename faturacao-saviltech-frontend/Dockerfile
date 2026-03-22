@@ -21,8 +21,8 @@ FROM nginx:alpine
 # Copia os arquivos gerados para o Nginx
 COPY --from=build /app/dist /usr/share/nginx/html
 
-# Copia uma configuração personalizada do Nginx (opcional)
-# COPY nginx.conf /etc/nginx/conf.d/default.conf
+# Proxy /api → backend (mesma origem no browser; evita bloqueios de CORS)
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 # Expõe a porta 80
 EXPOSE 80
