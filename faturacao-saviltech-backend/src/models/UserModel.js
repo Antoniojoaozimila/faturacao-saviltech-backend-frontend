@@ -74,15 +74,27 @@ export async function listUsers({ page = 1, limit = 5, q = '' }) {
 }
 
 export async function createDefaultAdminIfNotExists() {
-  const [rows] = await pool.query('SELECT COUNT(*) AS total FROM usuarios')
-  if (rows[0].total > 0) return
+  try {
+    const [rows] = await pool.query('SELECT COUNT(*) AS total FROM usuarios')
+    if (rows[0].total > 0) return
 
-  const senha = 'admin123'
-  const hash = await bcrypt.hash(senha, 10)
-  await pool.query(
-    'INSERT INTO usuarios (nome, apelido, username, senha_hash, admin) VALUES (?, ?, ?, ?, ?)',
-    ['Administrador', 'Sistema', 'admin', hash, 1]
-  )
-  console.log('Utilizador admin criado. Login: username=admin, senha=admin123')
+    const senha = 'admin123'
+    const hash = await bcrypt.hash(senha, 10)
+    await pool.query(
+      'INSERT INTO usuarios (nome, apelido, username, senha_hash, admin) VALUES (?, ?, ?, ?, ?)',
+      ['Administrador', 'Sistema', 'admin', hash, 1]
+    )
+    console.log('Utilizador admin criado. Login: username=admin, senha=admin123')
+  } catch (err) {
+    if (err?.code === 'ER_NO_SUCH_TABLE') {
+      console.error(
+        '[BD] A tabela "usuarios" não existe. A base está vazia ou MYSQL_DATABASE/DB_NAME está errado.\n' +
+          '  1) No .env na raiz (Docker), defina: MYSQL_DATABASE=sistema_cotacao (ou o nome real da sua base).\n' +
+          '  2) Importe o schema: docker exec -i meu-mysql mysql -u root -pSENHA sistema_cotacao < faturacao-saviltech-backend/sistema_cotacao.sql\n' +
+          '     (ou importe pelo MySQL Workbench o ficheiro sistema_cotacao.sql).'
+      )
+    }
+    throw err
+  }
 }
 
