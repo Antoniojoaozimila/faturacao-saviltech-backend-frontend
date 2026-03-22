@@ -6,7 +6,7 @@
 export const API_BASE =
   typeof import.meta !== 'undefined' && import.meta.env?.VITE_API_URL
     ? import.meta.env.VITE_API_URL
-    : 'http://localhost:4000'
+    : 'http://147.93.89.17:3000'
 
 const STORAGE_TOKEN = 'sistema_cotacao_token'
 
