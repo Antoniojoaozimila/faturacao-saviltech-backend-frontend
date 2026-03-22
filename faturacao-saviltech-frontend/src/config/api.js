@@ -1,16 +1,28 @@
 /**
- * URL base do backend.
- * - Vazio (recomendado em produção com Docker): pedidos vão para /api no MESMO host
- *   (Nginx no contentor frontend faz proxy para o backend).
- * - Defina VITE_API_URL se a API estiver noutro domínio/porta (ex.: dev local).
+ * URL base do backend (sem /api no final).
+ *
+ * Vite: defina VITE_API_URL no .env ou no build Docker.
+ * Ex.: VITE_API_URL=http://147.93.89.17:3000
+ *
+ * Nota: variáveis VITE_* são incorporadas em build time — alterar no "Docker Manager"
+ * só funciona se a plataforma reconstruir a imagem com esse ARG ou usar ficheiro .env no build.
  */
+const FALLBACK_PROD = 'http://147.93.89.17:3000'
+const FALLBACK_DEV = 'http://localhost:4000'
+
 function resolveApiBase() {
-  const raw =
+  const env =
     typeof import.meta !== 'undefined' ? import.meta.env?.VITE_API_URL : undefined
-  if (raw != null && String(raw).trim() !== '') {
-    return String(raw).replace(/\/$/, '')
+  const trimmed = env != null ? String(env).trim() : ''
+  if (trimmed) {
+    return trimmed.replace(/\/$/, '')
   }
-  return ''
+  // Desenvolvimento (npm run dev): backend típico na porta 4000
+  if (typeof import.meta !== 'undefined' && import.meta.env?.DEV) {
+    return FALLBACK_DEV
+  }
+  // Produção (build): mesmo padrão que o guia — IP público :3000
+  return FALLBACK_PROD
 }
 
 export const API_BASE = resolveApiBase()

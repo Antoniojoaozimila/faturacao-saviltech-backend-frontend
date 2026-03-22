@@ -12,6 +12,10 @@ RUN npm install
 # Copia todo o código
 COPY . .
 
+# Vite: URL da API no browser (build time). Sobrescreva no docker-compose ou --build-arg.
+ARG VITE_API_URL=http://147.93.89.17:3000
+ENV VITE_API_URL=$VITE_API_URL
+
 # Gera os arquivos estáticos de produção
 RUN npm run build
 
@@ -21,7 +25,6 @@ FROM nginx:alpine
 # Copia os arquivos gerados para o Nginx
 COPY --from=build /app/dist /usr/share/nginx/html
 
-# Proxy /api → backend (mesma origem no browser; evita bloqueios de CORS)
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 # Expõe a porta 80

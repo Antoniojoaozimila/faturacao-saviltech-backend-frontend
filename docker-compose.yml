@@ -43,8 +43,8 @@ services:
       DB_PASSWORD: ${MYSQL_ROOT_PASSWORD:-root123}
       DB_NAME: ${MYSQL_DATABASE:?Defina MYSQL_DATABASE no .env na raiz com o nome correto da base.}
       APP_PORT: 3000
-      # Se o browser chamar a API na porta 3000 (sem proxy), tem de listar o origin do site aqui.
-      CORS_ORIGINS: ${CORS_ORIGINS:-http://localhost:5173,http://127.0.0.1:5173}
+      # Frontend em :80 → API em :3000: o origin do site tem de estar permitido
+      CORS_ORIGINS: ${CORS_ORIGINS:-http://localhost:5173,http://127.0.0.1:5173,http://147.93.89.17}
     ports:
       - "3000:3000"
     depends_on:
@@ -53,7 +53,11 @@ services:
 
   # Frontend React
   frontend:
-    build: ./faturacao-saviltech-frontend
+    build:
+      context: ./faturacao-saviltech-frontend
+      args:
+        # Incorporada no bundle pelo Vite (rebuild obrigatório ao mudar)
+        VITE_API_URL: ${VITE_API_URL:-http://147.93.89.17:3000}
     container_name: meu-frontend
     restart: unless-stopped
     ports:
