@@ -1,0 +1,6 @@
+http://147.93.89.17:3000/api/auth/login
+
+{
+  "username": "admin",
+  "senha": "admin123"
+}
