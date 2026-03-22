@@ -7,8 +7,10 @@ services:
     container_name: meu-mysql
     restart: unless-stopped
     environment:
-      MYSQL_ROOT_PASSWORD: ${root123}
-      MYSQL_DATABASE: ${sistema_cotacao}
+      # Valores por defeito se faltar ficheiro .env na raiz (evita MySQL com senha vazia)
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-root123}
+      # Nome real da base — obrigatório no .env da raiz (sem valor por defeito)
+      MYSQL_DATABASE: ${MYSQL_DATABASE:?Defina MYSQL_DATABASE no .env na raiz com o nome correto da base.}
     volumes:
       - mysql-data:/var/lib/mysql
     ports:
@@ -22,8 +24,8 @@ services:
     environment:
       DB_HOST: mysql
       DB_USER: root
-      DB_PASSWORD: ${root123}
-      DB_NAME: ${sistema_cotacao}
+      DB_PASSWORD: ${MYSQL_ROOT_PASSWORD:-root123}
+      DB_NAME: ${MYSQL_DATABASE:?Defina MYSQL_DATABASE no .env na raiz com o nome correto da base.}
       APP_PORT: 3000
     ports:
       - "3000:3000"
