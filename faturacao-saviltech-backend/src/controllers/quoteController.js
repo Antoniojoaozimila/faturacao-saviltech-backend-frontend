@@ -12,11 +12,19 @@ export async function listarCotacoes(req, res) {
 
 export async function criarCotacao(req, res) {
   try {
-    const { cliente, valor, estado, servico } = req.body
-    if (!cliente || !valor || !estado) {
-      return res.status(400).json({ mensagem: 'Cliente, valor e estado são obrigatórios.' })
+    const { numero, cliente, valor, estado, servico } = req.body
+    if (!numero || !cliente || valor == null || !estado) {
+      return res
+        .status(400)
+        .json({ mensagem: 'Número, cliente, valor e estado são obrigatórios.' })
     }
-    const nova = await createQuote({ cliente, valor, estado, servico: servico || null })
+    const nova = await createQuote({
+      numero,
+      cliente,
+      valor,
+      estado,
+      servico: servico || null
+    })
     return res.status(201).json(nova)
   } catch (err) {
     console.error(err)

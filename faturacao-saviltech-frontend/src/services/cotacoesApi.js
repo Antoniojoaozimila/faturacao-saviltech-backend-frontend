@@ -1,4 +1,4 @@
-import { API_BASE, getAuthHeaders } from '../config/api'
+import { API_BASE, getAuthHeaders } from '../config/api.js'
 
 export async function apiListarCotacoes() {
   const res = await fetch(`${API_BASE}/api/cotacoes`, {

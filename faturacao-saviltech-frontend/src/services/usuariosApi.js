@@ -1,4 +1,4 @@
-import { API_BASE, getAuthHeaders } from '../config/api'
+import { API_BASE, getAuthHeaders } from '../config/api.js'
 
 export async function apiListarUsuarios({ page = 1, limit = 5, q = '' } = {}) {
   const params = new URLSearchParams({ page, limit })

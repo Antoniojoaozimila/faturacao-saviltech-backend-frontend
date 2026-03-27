@@ -1,4 +1,4 @@
-import { API_BASE, getAuthHeaders } from '../config/api'
+import { API_BASE, getAuthHeaders } from '../config/api.js'
 
 export async function apiListarClientes(q = '') {
   const params = q ? new URLSearchParams({ q }) : ''
